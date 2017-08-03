@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Goggle Api</title>
+        <style>
+            #map {
+                height: 100%;
+                width: 100%;
+                background-color: grey;
+            }
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Google Maps Demo</h3>
+        <div id="map"></div>
+        <script>
+            var locations = {
+                Girinigar: {
+                    center: {lat: 12.939099, lng: 77.54362},
+                    t: '28 30'
+                },
+                GKVK_Campus: {
+                    center: {lat: 13.086479, lng: 77.579504},
+                    t: '25 56'
+                },
+                IISC_Campus: {
+                    center: {lat: 13.017016, lng: 77.570733},
+                    t: '34 65'
+                },
+                Jagani: {
+                    center: {lat: 12.799788, lng: 77.661561},
+                    t: '34 56'
+                },
+                Hebbal: {
+                    center: {lat: 13.055438, lng: 77.597181},
+                    t: '22 54'
+                },
+                Jayanagar: {
+                    center: {lat: 12.929648, lng: 77.580222},
+                    t: '45 54'
+                },
+                Sarjapura: {
+                    center: {lat: 12.907983, lng: 77.687196},
+                    t: '12 65'
+                },
+                Indiranagar: {
+                    center: {lat: 12.968259, lng: 77.646694},
+                    t: '78 86'
+                },
+                Uttarhalli: {
+                    center: {lat: 12.911357, lng: 77.540946},
+                    t: '37 85'
+                },
+                Eletronics_City: {
+                    center: {lat: 12.835487, lng: 77.684429},
+                    t: '23 65'
+                },
+                HSR_Layout: {
+                    center: {lat: 12.914647, lng: 77.638493},
+                    t: '93 23'
+                },
+                Vidyaranyapura: {
+                    center: {lat: 13.084885, lng: 77.561276},
+                    t: '32 44'
+                },
+                IIHS_Sadashiv_Nagar: {
+                    center: {lat: 13.005875, lng: 77.580927},
+                    t: '43 55'
+                },
+                Wipro_EC: {
+                    center: {lat: 12.839581, lng: 77.6572082},
+                    t: '54 23'
+                },
+                Jakkur_Lake: {
+                    center: {lat: 13.083742, lng: 77.609579},
+                    t: '23 45'
+                },
+            };
+            function initMap() {
+                var blr = {lat: 12.977527, lng: 77.635864};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 11,
+                    center: blr,
+                    mapTypeId: 'terrain'
+                });
+                
+                for(var location in locations) {
+                    var cityCircle = new google.maps.Circle({
+                        strokeColor:"#FF0000",
+                        strokeOpacity:0.8,
+                        strokeWeight:2,
+                        fillColor:"#FF0000",
+                        fillOpacity:0.35,
+                        map: map,
+                        center: locations[location].center,
+                        radius: 1500
+                    });
+                }
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr-PrBbogGHvmDJ2lYbWLy-t5zCmC_DC8&callback=initMap"></script>
+    </body>
+</html>
