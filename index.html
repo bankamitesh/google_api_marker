@@ -100,11 +100,19 @@
                         fillOpacity:0.35,
                         map: map,
                         center: locations[location].center,
+                        label: locations[location].t,
                         radius: 1500
                     });
+                    var markers = new google.maps.Marker({
+                        position: locations[location].center,
+                        map: map,
+                        label: locations[location].t
+                    });
                 }
+                var markerCluster = new MarkerClusterer(map, markers, {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
             }
         </script>
+        <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr-PrBbogGHvmDJ2lYbWLy-t5zCmC_DC8&callback=initMap"></script>
     </body>
 </html>
