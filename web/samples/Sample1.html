@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Goggle Api</title>
+        <style>
+            html,
+            body,
+            #map {
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+                background-color: grey;
+                padding: 0px
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Google Maps Demo</h3>
+        <div id="map"></div>
+    </body>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr-PrBbogGHvmDJ2lYbWLy-t5zCmC_DC8&callback=initMap" async defer></script>
+    <script>
+            function initMap() {
+            var locations = {
+                Girinigar: {
+                    center: {lat: 12.939099, lng: 77.54362},
+                    t1: '28.35',
+                    t2: '30%'
+                },
+                GKVK_Campus: {
+                    center: {lat: 13.086479, lng: 77.579504},
+                    t1: '25.23', 
+                    t2: '56%'
+                },
+                IISC_Campus: {
+                    center: {lat: 13.017016, lng: 77.570733},
+                    t1: '34.54',
+                    t2: '65%'
+                },
+                Jagani: {
+                    center: {lat: 12.799788, lng: 77.661561},
+                    t1: '34.54', 
+                    t2: '56%'
+                },
+                Hebbal: {
+                    center: {lat: 13.055438, lng: 77.597181},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+                Jayanagar: {
+                    center: {lat: 12.929648, lng: 77.580222},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+                Sarjapura: {
+                    center: {lat: 12.907983, lng: 77.687196},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+                Indiranagar: {
+                    center: {lat: 12.968259, lng: 77.646694},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+                Uttarhalli: {
+                    center: {lat: 12.911357, lng: 77.540946},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+                Eletronics_City: {
+                    center: {lat: 12.835487, lng: 77.684429},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+                HSR_Layout: {
+                    center: {lat: 12.914647, lng: 77.638493},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+                Vidyaranyapura: {
+                    center: {lat: 13.084885, lng: 77.561276},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+                IIHS_Sadashiv_Nagar: {
+                    center: {lat: 13.005875, lng: 77.580927},
+                    t1: '22.23',
+                    t2: '54%'
+                },
+                Wipro_EC: {
+                    center: {lat: 12.839581, lng: 77.6572082},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+                Jakkur_Lake: {
+                    center: {lat: 13.083742, lng: 77.609579},
+                    t1: '22.23', 
+                    t2: '54%'
+                },
+            };
+                var latlng = new google.maps.LatLng(12.977527, 77.635864);
+                var myOptions = {
+                    zoom: 12,
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("map"), myOptions);
+                for(var location in locations) {
+                    var markerIcon1 = {
+                        url: '../assets/images/chsym_ts_swm.svg',
+                        scaledSize: new google.maps.Size(80, 80),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(32,65),
+                        labelOrigin: new google.maps.Point(40,20)
+                    };
+                    var markerIcon2 = {
+                        url: '../assets/images/chsym_ts_swm.svg',
+                        scaledSize: new google.maps.Size(80, 80),
+                        origin: new google.maps.Point(0, 0),
+                        anchor: new google.maps.Point(32,65),
+                        labelOrigin: new google.maps.Point(40,35)
+                    };
+                    var latitude =locations[location].center.lat;
+                    var lontitude = locations[location].center.lng;
+                    var myLatLng = new google.maps.LatLng(latitude, lontitude);
+                    var markerLabel1 = locations[location].t1;
+                    var markerLabel2 = locations[location].t2;
+                    var marker1 = new google.maps.Marker({
+                        icon: markerIcon1,
+                        position: myLatLng,
+                        label: {
+                            text: markerLabel1,
+                            color: "#black",
+                            fontSize: "14px",
+                            fontWeight: "bold"
+                        },
+                        map: map
+                    });
+                    var marker2 = new google.maps.Marker({
+                        icon: markerIcon2,
+                        position: myLatLng,
+                        label: {
+                            text: markerLabel2,
+                            color: "#black",
+                            fontSize: "14px",
+                            fontWeight: "bold"
+                        },
+                        map: map
+                    });
+                    ;
+                }
+            }
+        </script>
+</html>
