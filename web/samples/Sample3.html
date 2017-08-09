@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Goggle Api</title>
+        <style>
+            html,
+            body,
+            #map {
+                height: 100%;
+                width: 100%;
+                margin: 0px;
+                background-color: grey;
+                padding: 0px
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Google Maps Demo</h3>
+        <div id="map"></div>
+    </body>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDr-PrBbogGHvmDJ2lYbWLy-t5zCmC_DC8&callback=initMap" async defer></script>
+    <script>
+            function initMap() {
+            var locations = {
+                Girinigar: {
+                    center: {lat: 12.939099, lng: 77.54362},
+                    t1: '28.2°C'
+                },
+                GKVK_Campus: {
+                    center: {lat: 13.086479, lng: 77.579504},
+                    t1: '18.4°C' 
+                },
+                IISC_Campus: {
+                    center: {lat: 13.017016, lng: 77.570733},
+                    t1: '28.0°C'
+                },
+                Jagani: {
+                    center: {lat: 12.799788, lng: 77.661561},
+                    t1: '26.4°C' 
+                },
+                Hebbal: {
+                    center: {lat: 13.055438, lng: 77.597181},
+                    t1: '22.2°C' 
+                },
+                Jayanagar: {
+                    center: {lat: 12.929648, lng: 77.580222},
+                    t1: '26.0°C' 
+                },
+                Sarjapura: {
+                    center: {lat: 12.907983, lng: 77.687196},
+                    t1: '27.0°C'
+                },
+                Indiranagar: {
+                    center: {lat: 12.968259, lng: 77.646694},
+                    t1: '27.7°C' 
+                },
+                Uttarhalli: {
+                    center: {lat: 12.911357, lng: 77.540946},
+                    t1: '27.1°C'
+                },
+                Eletronics_City: {
+                    center: {lat: 12.835487, lng: 77.684429},
+                    t1: '23.0°C'
+                },
+                HSR_Layout: {
+                    center: {lat: 12.914647, lng: 77.638493},
+                    t1: '27.2°C'
+                },
+                Vidyaranyapura: {
+                    center: {lat: 13.084885, lng: 77.561276},
+                    t1: '27.0°C'
+                },
+                IIHS_Sadashiv_Nagar: {
+                    center: {lat: 13.005875, lng: 77.580927},
+                    t1: '26.4°C'
+                },
+                Wipro_EC: {
+                    center: {lat: 12.839581, lng: 77.6572082},
+                    t1: '25.4°C'
+                },
+                Jakkur_Lake: {
+                    center: {lat: 13.083742, lng: 77.609579},
+                    t1: '26.4°C'
+                },
+                Hunsur: {
+                    center: {lat: 12.307031, lng: 76.304687},
+                    t1: '28.6°C'
+                },
+                Kothegala: {
+                    center: {lat: 12.336308, lng: 76.233863},
+                    t1: '28.6°C'
+                },
+            };
+                var latlng = new google.maps.LatLng(12.977527, 77.635864);
+                var myOptions = {
+                    zoom: 12,
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("map"), myOptions);
+                for(var location in locations) {
+                    var markerIcon1 = {
+                        path: "M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0",
+                        fillColor: 'blue',
+                        fillOpacity: .6,
+                        anchor: new google.maps.Point(0,0),
+                        strokeWeight: 0,
+                        scale: 1,
+                    };
+                    var latitude =locations[location].center.lat;
+                    var lontitude = locations[location].center.lng;
+                    var myLatLng = new google.maps.LatLng(latitude, lontitude);
+                    var markerLabel1 = locations[location].t1;
+                    var marker1 = new google.maps.Marker({
+                        icon: markerIcon1,
+                        position: myLatLng,
+                        label: {
+                            text: markerLabel1,
+                            color: 'white',
+                            fontSize: "12px",
+                            fontWeight: "bold"
+                        },
+                        map: map
+                    });
+                    
+                    ;
+                }
+            }
+        </script>
+</html>
