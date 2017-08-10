@@ -98,33 +98,37 @@
                     center: latlng,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
+
                 var map = new google.maps.Map(document.getElementById("map"), myOptions);
+
                 for(var location in locations) {
                     var markerIcon1 = {
                         path: "M-20,0a20,20 0 1,0 40,0a20,20 0 1,0 -40,0",
-                        fillColor: 'blue',
-                        fillOpacity: .6,
+                        fillColor: '#6FCBE7',
+                        fillOpacity: 0.9,
                         anchor: new google.maps.Point(0,0),
                         strokeWeight: 0,
-                        scale: 1,
+                        origin: new google.maps.Point(0, 0),
+                        scale: 1.7
+
                     };
+
                     var latitude =locations[location].center.lat;
                     var lontitude = locations[location].center.lng;
                     var myLatLng = new google.maps.LatLng(latitude, lontitude);
                     var markerLabel1 = locations[location].t1;
+
                     var marker1 = new google.maps.Marker({
                         icon: markerIcon1,
                         position: myLatLng,
                         label: {
                             text: markerLabel1,
                             color: 'white',
-                            fontSize: "12px",
+                            fontSize: "14px",
                             fontWeight: "bold"
                         },
                         map: map
                     });
-                    
-                    ;
                 }
             }
         </script>
