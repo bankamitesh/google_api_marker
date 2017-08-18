@@ -3,33 +3,28 @@
 ### What is this repository for? ###
 
 * Google Api Tutorial
-* Learn Google Api Basics [https://developers.google.com/maps/documentation/javascript/tutorial]
+* Learn Google Api Basics[https://developers.google.com/maps/documentation/javascript/tutorial]
 
 ### How do I get set up? ###
 
 * This example creates a Google Map in HTML:
 
-	<html>
-		<body>
-
-			<h1>My First Google Map</h1>
-
-			<div id="googleMap" style="width:100%;height:400px;"></div>
-
-			<script>
-				function myMap() {
-					var mapProp= {
-    					center:new google.maps.LatLng(51.508742,-0.120850),
-    					zoom:5,
-					};
-					var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-				}
-			</script>
-
-			<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
-
-		</body>
-	</html>
+		<html>
+			<body>
+				<h1>My First Google Map</h1>
+				<div id="googleMap" style="width:100%;height:400px;"></div>
+				<script>
+					function myMap() {
+						var mapProp= {
+							center:new google.maps.LatLng(51.508742,-0.120850),
+							zoom:5,
+						};
+						var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+					}
+				</script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+			</body>
+		</html>
 	
 * Map Setup
 
@@ -73,27 +68,22 @@
 
 * This example creates a Google Map centered in London, England:
 
-	<html>
-		<body>
-
-			<h1>My First Google Map</h1>
-
-			<div id="googleMap" style="width:100%;height:400px;"></div>
-
-			<script>
-				function myMap() {
-					var mapProp= {
-    					center:new google.maps.LatLng(51.508742,-0.120850),
-    					zoom:5,
-					};
-					var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-				}
-			</script>
-
-			<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
-
-		</body>
-	</html>
+		<html>
+			<body>
+				<h1>My First Google Map</h1>
+				<div id="googleMap" style="width:100%;height:400px;"></div>
+				<script>
+					function myMap() {
+						var mapProp= {
+							center:new google.maps.LatLng(51.508742,-0.120850),
+							zoom:5,
+						};
+						var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+					}
+				</script>
+				<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+			</body>
+		</html>
 	
 ### Who do I talk to? ###
 
