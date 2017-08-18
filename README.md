@@ -3,7 +3,7 @@
 ### What is this repository for? ###
 
 * Google Api Tutorial
-* Learn Google Api Basics[https://developers.google.com/maps/documentation/javascript/tutorial]
+* Learn Google Api Basics [https://developers.google.com/maps/documentation/javascript/tutorial]
 
 ### How do I get set up? ###
 
